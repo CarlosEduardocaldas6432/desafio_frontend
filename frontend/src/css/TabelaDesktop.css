@@ -1,48 +1,36 @@
-
-
-
 table {
   width: 95%;
   border-collapse: collapse;
   margin: auto;
   margin-bottom: 150px;
   box-shadow: 0 2px 40px -30px rgba(0, 0, 0, 0.5);
-  
 }
 
-thead{
+thead {
   background-color: #0500FF;
   color: white;
   font-weight: 300;
-  
 }
 
 th, td {
   padding: 8px;
   text-align: center;
-
 }
 
-td{
-
-  border-bottom: solid 2px #DFDFDF ;
-
+td {
+  border-bottom: solid 2px #DFDFDF;
 }
 
-th{
+th {
   padding: 12px 0px;
 }
 
-
-.ponta_esquerda{
+th:nth-of-type(1) {
   border-radius: 10px 0px 0 0;
 }
-.ponta_direita{
+th:nth-of-type(5) {
   border-radius: 0px 10px 0 0;
 }
-
-
-
 
 .foto_perfil {
   width: 50px;
