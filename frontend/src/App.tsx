@@ -1,4 +1,5 @@
 import './css/App.css'
+import TabelaDesktop from './components/TabelaDesktop';
 
 function App() {
 
@@ -19,10 +20,11 @@ function App() {
     <button type="submit"> <img src="/icons/lupa.svg" alt="botão de pesquisa" /></button>
 </form>
         
-
       </div>
+
+      <TabelaDesktop/>
     </>
   )
 }
 
-export default App
+export default App;
