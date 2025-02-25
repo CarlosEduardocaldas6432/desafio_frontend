@@ -2,6 +2,7 @@ import '../css/TabelaDesktop.css'
 import { useEffect, useState } from "react";
 import { api } from "../modules/fetchUsers";
 import { Funcionario } from "../modules/fetchUsers";
+import { formatarData, formatarTelefone } from '../modules/formataInformacao';
 
 
  function TabelaDesktop() {
@@ -32,23 +33,23 @@ import { Funcionario } from "../modules/fetchUsers";
         <table id="tabela_funcionarios">
         <thead>
             <tr>
-                <th>Foto</th>
+                <th className='ponta_esquerda'>Foto</th>
                 <th>Nome</th>
                 <th>Cargo</th>
                 <th>Data de Admissão</th>
-                <th>Telefone</th>
+                <th className='ponta_direita' >Telefone</th>
             </tr>
         </thead>
     <tbody>
     { tabela.map((funcionario, index) => (
     <tr key={index}>
       <td>
-        <img src={funcionario.image} alt={funcionario.name} />
+        <img className='foto_perfil' src={funcionario.image} alt={funcionario.name} />
       </td>
       <td>{funcionario.name}</td>
       <td>{funcionario.job}</td>
-      <td>{funcionario.admission_date}</td>
-      <td>{funcionario.phone}</td>
+      <td>{formatarData(funcionario.admission_date)}</td>
+      <td>{formatarTelefone(funcionario.phone)}</td>
     </tr>
   ))}
     </tbody>

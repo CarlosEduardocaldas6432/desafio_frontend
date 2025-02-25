@@ -2,18 +2,49 @@
 
 
 table {
-    width: 100%;
+    width: 95%;
     border-collapse: collapse;
+    margin: auto;
+    margin-bottom: 150px;
+    box-shadow: 0 2px 40px -30px rgba(0, 0, 0, 0.5);
+    
   }
+
+  thead{
+    background-color: #0500FF;
+    color: white;
+    font-weight: 300;
+    
+  }
+
   th, td {
-    border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
+ 
   }
-  th {
-    background-color: #f2f2f2;
+
+  td{
+
+    border-bottom: solid 2px #DFDFDF ;
+
   }
-  img {
+
+  th{
+    padding: 12px 0px;
+  }
+
+
+  .ponta_esquerda{
+    border-radius: 10px 0px 0 0;
+  }
+  .ponta_direita{
+    border-radius: 0px 10px 0 0;
+  }
+
+
+
+
+  .foto_perfil {
     width: 50px;
     height: 50px;
     border-radius: 50%;
