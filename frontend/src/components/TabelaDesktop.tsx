@@ -1,7 +1,6 @@
 import '../css/TabelaDesktop.css'
 import { useEffect, useState } from "react";
-import { api } from "../modules/fetchUsers";
-import { Funcionario } from "../modules/fetchUsers";
+import Funcionario from "../modules/tipoFucionario";
 import { formatarData, formatarTelefone } from '../modules/formataInformacao';
 
 
@@ -13,8 +12,8 @@ import { formatarData, formatarTelefone } from '../modules/formataInformacao';
     useEffect(() => {
       const fetchTabela = async () => {
         try {
-          const response = await api.get<Funcionario[]>("http://localhost:3000/employees");
-          setTabela(response.data);
+          const resposta = await (await fetch("http://localhost:3000/employees")).json()
+          setTabela(resposta);
         } catch (err) {
           setError("Erro ao carregar os posts." + err);
         } finally {
@@ -33,11 +32,11 @@ import { formatarData, formatarTelefone } from '../modules/formataInformacao';
         <table id="tabela_funcionarios">
         <thead>
             <tr>
-                <th className='ponta_esquerda'>Foto</th>
+                <th >Foto</th>
                 <th>Nome</th>
                 <th>Cargo</th>
                 <th>Data de Admissão</th>
-                <th className='ponta_direita' >Telefone</th>
+                <th>Telefone</th>
             </tr>
         </thead>
     <tbody>
@@ -54,6 +53,9 @@ import { formatarData, formatarTelefone } from '../modules/formataInformacao';
   ))}
     </tbody>
   </table>
+
+
+
 
 
 
