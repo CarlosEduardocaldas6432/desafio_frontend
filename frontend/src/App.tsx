@@ -1,12 +1,15 @@
 import './css/App.css'
 import React, { useState } from 'react';
-import TabelaCompleta from './components/TabelaCompleta';
-import TabelaPesquisa from './components/TabelaPesquisa';
+import TabelaCompletaDesktop from './components/TabelaCompletaDesktop';
+import TabelaPesquisaDesktop from './components/TabelaPesquisaDesktop';
+import TabelaCompletaMobile from './components/TabelaCompletaMobile';
 
 function App() {
 
   const [inputValue, setInputValue] = useState<string>('');
   const [pesquisou, setPesquisou] = useState<boolean>(false);
+
+  //   { pesquisou ? <TabelaPesquisaDesktop inputValue={inputValue}  /> : <TabelaCompletaDesktop/>}  
 
   
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -40,9 +43,9 @@ function App() {
         
       </div>
 
-      {pesquisou ? <TabelaPesquisa inputValue={inputValue}  /> : <TabelaCompleta/>}
+    
       
-
+        <TabelaCompletaMobile/>
 
     </>
   )

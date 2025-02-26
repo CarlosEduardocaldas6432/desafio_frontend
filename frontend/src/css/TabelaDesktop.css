@@ -15,17 +15,15 @@ thead {
   font-weight: 300;
 }
 
-th, td {
+ td {
   padding: 8px;
   text-align: center;
-}
-
-td {
   border-bottom: solid 2px #DFDFDF;
 }
 
 th {
   padding: 12px 0px;
+  text-align: center;
 }
 
 th:nth-of-type(1) {

@@ -1,4 +1,4 @@
-import '../css/Tabela.css';
+import '../css/TabelaDesktop.css';
 import { useEffect, useState } from "react";
 import Funcionario from "../modules/tipoFucionario";
 import { formatarData, formatarTelefone } from '../modules/formataInformacao';
@@ -8,7 +8,7 @@ interface TabelaPesquisaProps {
   inputValue: string;
 }
 
-function TabelaPesquisa({ inputValue }: TabelaPesquisaProps) {
+function TabelaPesquisaDesktop({ inputValue }: TabelaPesquisaProps) {
   const [tabela, setTabela] = useState<Funcionario[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -66,4 +66,4 @@ function TabelaPesquisa({ inputValue }: TabelaPesquisaProps) {
   );
 }
 
-export default TabelaPesquisa;
+export default TabelaPesquisaDesktop;
