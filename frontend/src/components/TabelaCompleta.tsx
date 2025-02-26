@@ -1,10 +1,10 @@
-import '../css/TabelaDesktop.css'
+import '../css/Tabela.css'
 import { useEffect, useState } from "react";
 import Funcionario from "../modules/tipoFucionario";
 import { formatarData, formatarTelefone } from '../modules/formataInformacao';
 
 
- function TabelaDesktop() {
+ function TabelaCompleta() {
     const [tabela, setTabela] = useState<Funcionario[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -15,7 +15,7 @@ import { formatarData, formatarTelefone } from '../modules/formataInformacao';
           const resposta = await (await fetch("http://localhost:3000/employees")).json()
           setTabela(resposta);
         } catch (err) {
-          setError("Erro ao carregar os posts." + err);
+          setError("Erro ao carregar Tabela dos Funcionarios." + err);
         } finally {
           setLoading(false);
         }
@@ -63,4 +63,4 @@ import { formatarData, formatarTelefone } from '../modules/formataInformacao';
     );
   }
 
-  export default TabelaDesktop;
+  export default TabelaCompleta;
