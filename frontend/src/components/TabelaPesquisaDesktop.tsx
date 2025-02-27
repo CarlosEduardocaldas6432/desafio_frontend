@@ -38,7 +38,7 @@ function TabelaPesquisaDesktop({ inputValue }: TabelaPesquisaProps) {
 
   return (
     <div>
-      <table id="tabela_funcionarios">
+      <table className='tabela_desktop'>
         <thead>
           <tr>
             <th>Foto</th>

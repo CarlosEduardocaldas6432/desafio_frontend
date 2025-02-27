@@ -2,10 +2,14 @@ import '../css/TabelaMobile.css'
 import { useEffect, useState } from "react";
 import Funcionario from "../modules/tipoFucionario";
 import { formatarData, formatarTelefone } from '../modules/formataInformacao';
+import pesquisarFuncionarios from '../modules/filtrarFucionario';
 import Accordion from './Accordion';
 
+interface TabelaPesquisaProps {
+  inputValue: string;
+}
 
- function TabelaCompletaMobile() {
+ function TabelaPesquisaMobile({ inputValue }: TabelaPesquisaProps) {
     const [tabela, setTabela] = useState<Funcionario[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -14,7 +18,7 @@ import Accordion from './Accordion';
       const fetchTabela = async () => {
         try {
           const resposta = await (await fetch("http://localhost:3000/employees")).json()
-          setTabela(resposta);
+          setTabela(pesquisarFuncionarios(resposta, inputValue));
         } catch (err) {
           setError("Erro ao carregar Tabela dos Funcionarios." + err);
         } finally {
@@ -23,12 +27,14 @@ import Accordion from './Accordion';
       };
   
       fetchTabela();
-    }, []);
+    }, [inputValue]);
   
     if (loading) return <p>Carregando...</p>;
     if (error) return <p>{error}</p>;
 
-
+    if (tabela.length === 0) {
+      return <div className='Não_existe_funcionario' ><h4>Não existe esse funcionário</h4></div>;
+    }
 
 
 
@@ -38,8 +44,8 @@ import Accordion from './Accordion';
         <table>
         <thead>
             <tr>
-                <th className='titulo_tabela_mobile'>Foto</th>
-                <th className='titulo_tabela_mobile'>Nome<span className='PontoDaTabela'>•</span></th>
+            <th className='titulo_tabela_mobile'>Foto</th>
+            <th className='titulo_tabela_mobile'>Nome<span className='PontoDaTabela'>•</span></th>
             </tr>
         </thead>
   </table>
@@ -80,4 +86,4 @@ import Accordion from './Accordion';
     );
   }
 
-  export default TabelaCompletaMobile;
+  export default TabelaPesquisaMobile;

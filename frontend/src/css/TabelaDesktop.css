@@ -1,4 +1,4 @@
-table {
+.tabela_desktop {
   width: 95%;
   border-collapse: collapse;
   margin: auto;
@@ -17,6 +17,7 @@ thead {
 
  td {
   padding: 8px;
+  background-color: white;
   text-align: center;
   border-bottom: solid 2px #DFDFDF;
 }

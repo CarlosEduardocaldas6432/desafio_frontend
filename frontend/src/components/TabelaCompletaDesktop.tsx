@@ -29,10 +29,10 @@ import { formatarData, formatarTelefone } from '../modules/formataInformacao';
   
     return (
       <div>
-        <table id="tabela_funcionarios">
+        <table className='tabela_desktop' >
         <thead>
             <tr>
-                <th >Foto</th>
+                <th>Foto</th>
                 <th>Nome</th>
                 <th>Cargo</th>
                 <th>Data de Admissão</th>

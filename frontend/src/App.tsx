@@ -1,15 +1,29 @@
 import './css/App.css'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TabelaCompletaDesktop from './components/TabelaCompletaDesktop';
 import TabelaPesquisaDesktop from './components/TabelaPesquisaDesktop';
 import TabelaCompletaMobile from './components/TabelaCompletaMobile';
+import TabelaPesquisaMobile from './components/TabelaPesquisaMobile';
 
 function App() {
 
   const [inputValue, setInputValue] = useState<string>('');
   const [pesquisou, setPesquisou] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 700);
 
-  //   { pesquisou ? <TabelaPesquisaDesktop inputValue={inputValue}  /> : <TabelaCompletaDesktop/>}  
+
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 700);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+    
 
   
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -42,10 +56,12 @@ function App() {
 </form>
         
       </div>
+      {isMobile ? (
+        pesquisou ? <TabelaPesquisaMobile inputValue={inputValue} /> : <TabelaCompletaMobile />
+      ) : (
+        pesquisou ? <TabelaPesquisaDesktop inputValue={inputValue} /> : <TabelaCompletaDesktop />
+      )}
 
-    
-      
-        <TabelaCompletaMobile/>
 
     </>
   )
