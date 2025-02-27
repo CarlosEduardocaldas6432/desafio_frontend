@@ -92,7 +92,7 @@ yarn json-server --watch db.json --port 3000
 
 - `http://localhost:3000/employees`
 
-Exemplo array de objetos retornado:
+Exemplo de array de objetos retornado:
 
 ```json
 [
