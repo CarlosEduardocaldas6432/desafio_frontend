@@ -31,7 +31,7 @@ Além disso, a tabela conta com um campo de pesquisa, permitindo filtrar os dado
 - TypeScript
 - Vite
 - json-server (para simulação da API)
-- Styled Components ou TailwindCSS (caso aplicável)
+
 
 ## Pré-requisitos
 
