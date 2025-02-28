@@ -1,39 +1,31 @@
-table {
+.tabela_mobile {
   width: 95%;
   border-collapse: collapse;
   margin: auto;
-  
-
 	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-thead {
+.thead_mobile {
   background-color: #0500FF;
   color: white;
   font-weight: 300;
 }
 
-th  {
+.titulo_tabela_mobile  {
   padding: 12px 0px;
-
 }
 
 .titulo_tabela_mobile:nth-of-type(1) {
   border-radius: 10px 0px 0px 0px;
-  width: 30%;
-  
+  width: 30%; 
 }
 .titulo_tabela_mobile:nth-of-type(2) {
   border-radius: 0px 10px 0px 0px;
-  
-  
 }
 
 .div_tabela{
-
   margin-bottom: 100px;
-
 }
 
 .PontoDaTabela{
@@ -42,8 +34,6 @@ th  {
   font-size: 25px;
   line-height: 0.3;
   vertical-align: sub;
-  
-
 }
 
 .foto_perfil {

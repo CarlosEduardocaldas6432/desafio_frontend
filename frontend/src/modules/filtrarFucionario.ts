@@ -1,15 +1,14 @@
 import Funcionario from "../modules/tipoFucionario";
+import { formatarTelefone } from './formataInformacao';
 
-function pesquisarFuncionarios(arrayFuncionarios: Funcionario[], inputPesquisa: string): Funcionario[] {
+function pesquisarFuncionarios(arrayFuncionarios: Funcionario[], inputSearch: string): Funcionario[] {
 
-    const inputPesquisaLowerCase = inputPesquisa.toLowerCase();
-
+    const inputSearchLowerCase = inputSearch.toLowerCase();
 
     return arrayFuncionarios.filter(funcionario => {
-
-        return funcionario.name.toLowerCase().includes(inputPesquisaLowerCase) ||
-               funcionario.job.toLowerCase().includes(inputPesquisaLowerCase) ||
-               funcionario.phone.includes(inputPesquisaLowerCase);
+        return funcionario.name.toLowerCase().includes(inputSearchLowerCase) ||
+               funcionario.job.toLowerCase().includes(inputSearchLowerCase) ||
+               formatarTelefone(funcionario.phone).includes(inputSearchLowerCase);
     });
 }
 

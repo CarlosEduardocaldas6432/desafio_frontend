@@ -9,28 +9,28 @@
 	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-thead {
+.thead_desktop {
   background-color: #0500FF;
   color: white;
   font-weight: 300;
 }
 
- td {
+.td_desktop {
   padding: 8px;
   background-color: white;
   text-align: center;
   border-bottom: solid 2px #DFDFDF;
 }
 
-th {
+.th_desktop {
   padding: 12px 0px;
   text-align: center;
 }
 
-th:nth-of-type(1) {
+.th_desktop:nth-of-type(1) {
   border-radius: 10px 0px 0 0;
 }
-th:nth-of-type(5) {
+.th_desktop:nth-of-type(5) {
   border-radius: 0px 10px 0 0;
 }
 
